@@ -1,13 +1,16 @@
-# icare
+# ios自动打包发布
 
-## 安装
+## exportXXX.plist修改
 
-1. [flutter集成gRPC](https://blog.csdn.net/qq_30903139/article/details/88558414)
-2. 拉取proto且转dart、复制code_zh.json:
-        ./ios_build.sh prepare
+1. teamID的值改成自己的
+2. 发布版里面signingCertificate如果不一样也改一下
+
+## exportXXX.plist修改
+
+project_name和scheme_name改一下
 
 ## 注意
 
-1. 如果是第一次跑ios，必须先用xcode打开ios/Runner先跑一下。
-2. 注意关注服务器proto是否有新变更，如果有要更新并编译。
-3. 因为flutter的ui本身可读性差，一定要加上自动格式化插件，不要提交未格式化的代码。
+1. clean这块我注释过了，是因为我这边flutter项目是不能用的。
+2. 如果是flutter项目，要先执行flutter build ios。
+3. 关于AppleId帐号密码那块，我这边其实是不需要的，直接打包就自动上传上去了，这应该跟环境有关。
